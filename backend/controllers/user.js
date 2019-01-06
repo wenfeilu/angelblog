@@ -2,7 +2,6 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const db = require("../models/database");
 
-// sign up
 exports.createUser = (req, res, next) => {
   bcrypt.hash(req.body.password, 10).then(hash => {
     const user = {
@@ -27,7 +26,6 @@ exports.createUser = (req, res, next) => {
 }
 
 
-// log in
 exports.userLogin = (req, res, next) => {
   let fetchedUser;
   let sql = `SELECT * FROM user WHERE email = '${req.body.email}'`;
@@ -52,7 +50,6 @@ exports.userLogin = (req, res, next) => {
           process.env.JWT_KEY,
           { expiresIn: "1h" }
         );
-        // send token to front end
         res.status(200).json({
           token: token,
           expiresIn: 3600,
