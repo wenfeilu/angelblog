@@ -1,11 +1,11 @@
 const mysql = require("mysql");
 
 const db = mysql.createConnection({
-    host     : 'aa12lltmnaeaptt.cumnkarhjrlj.us-east-2.rds.amazonaws.com:3306 ',
-    user     : 'angeladb',
-    password : 'password',
-    port     : 3306,
-    database : 'angeladb'
+    host     : ,
+    user     : ,
+    password : ,
+    port     : ,
+    database : 
   
   });
   
